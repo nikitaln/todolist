@@ -1,4 +1,4 @@
-package main;
+package main.service;
 
 import main.model.Task;
 

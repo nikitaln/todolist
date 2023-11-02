@@ -1,4 +1,4 @@
-package main;
+package main.controllers;
 
 import main.model.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,6 @@ public class ToDoListController {
     //получение списка всех дел
     @GetMapping("/tasks/")
     public List<Task> list() {
-
         Iterable<Task> taskIterable = taskRepository.findAll();
         ArrayList<Task> tasks = new ArrayList<>();
         for (Task task : taskIterable) {
@@ -35,7 +34,6 @@ public class ToDoListController {
     //получить конкретное дело
     @GetMapping(value = "/tasks/{id}")
     public ResponseEntity getTask(@PathVariable int id) {
-
         Optional<Task> taskOptional = taskRepository.findById(id);
         if (!taskOptional.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
@@ -64,7 +62,7 @@ public class ToDoListController {
     //удаление дела по id
     @RequestMapping(value = "/tasks/{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable int id) {
-
+        System.out.println("Контроллер - удаление книги " + id);
         taskRepository.deleteById(id);
     }
 }

@@ -1,4 +1,4 @@
-package main;
+package main.controllers;
 
 import main.model.Task;
 import main.model.TaskRepository;

@@ -1,12 +1,14 @@
 $(function(){
 
-
     const appendBook = function(data){
         var bookCode = '<a href="#" class="book-link" data-id="' +
             data.id + '">' + data.taskName + '</a>' + '<button id="delete">Удалить</button><br>';
         $('#book-list').append('<div>' + bookCode + '</div>');
     };
 
+    $(".delete").click(function(){
+        alert("WWW");
+    });
 
 //    Loading books on load page
 //    $.get('/tasks/', function(response)
